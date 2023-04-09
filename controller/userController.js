@@ -41,8 +41,8 @@ const addUser = async (req, res) => {
 
       let info = await transporter.sendMail({
         from: `${process.env.PRIMECON_EMAIL}`, // sender address
-        to:`${email},${process.env.PRIMECON_EMAIL}`, // list of receivers
-        subject: "Hiring For Node Js", // Subject line
+        to: `${email}`, // list of receivers
+        subject: "Thank For Contecting PRIMECON Contruction", // Subject line
         html: `<!DOCTYPE html>
         <html lang="en">
           <head>
@@ -57,81 +57,82 @@ const addUser = async (req, res) => {
               rel="stylesheet"
             />
             <style>
-                *{
-                    margin: 0;
-                    padding: 0;
-                    box-sizing: border-box;
-                }
-                .G_1{
-                    height: 100vh;
-                    width: 100%;
+            * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+            }
 
-                }
-                .G_2{
-                    height: 648px;
-                    width: 601px;
-                    display: flex;
-                    margin: 0 auto;
-                    font-family: 'Poppins',sans-serif;
-                }
-                .child-one{
-                    height: 78px;
-                    width: 100%;
-                    background: #212d92;
-                    display: flex;
-                    align-items: center;
-                    padding: 20px;
-                }
-                .child-two{
-                    height: 492px;
-                    width: 100%;
-                    padding: 45px;
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 14px;
-                    line-height: 21px;
-                    left: 4.99%;
-                    right: 4.99%;
-                    top: 17.44%;
-                    bottom: 20.99%;
+            .G_1 {
+              height: 100vh;
+              width: 100%;
 
+            }
 
-                }
+            .G_2 {
+              height: 660px;
+              width: 601px;
+              display: flex;
+              margin: 0 auto;
+              font-family: 'Poppins', sans-serif;
+            }
 
-                p {
-                    text-align: auto;
+            .child-one {
+              height: 78px;
+              width: 100%;
+              background: #212d92;
+              display: flex;
+              align-items: center;
+              padding: 20px;
+            }
 
-                }
-
-                .child-three{
-                    height: 78px;
-                    width: 100%;
-
-                    padding: 20px;
-                    background-color: #D9D9D9;
-                    font-size: 12px;
-                    font-style: normal;
-                    font-weight: 400;
-                    line-height: 18px;
+            .child-two {
+              height: 492px;
+              width: 100%;
+              padding: 45px;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 21px;
+              left: 4.99%;
+              right: 4.99%;
+              top: 17.44%;
+              bottom: 20.99%;
 
 
-                }
+            }
 
-                .center {
-                    display: block;
-                    margin-left: auto;
-                    margin-right: auto;
-                    margin-top: 5px;
+            p {
+              text-align: auto;
 
-        }
-            </style>
+            }
+
+            .child-three {
+              height: 89px;
+              width: 100%;
+              text-align: center;
+              padding: 20px;
+              background-color: #D9D9D9;
+              font-size: 12px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 18px;
+            }
+
+            .center {
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              margin-top: 5px;
+            }
+          </style>
           </head>
           <body>
             <div class="G_1">
               <div class="G_2">
                <div>
                 <div class="child-one">
-                    <img src="icon1.png" width="116.34px" height="39px" >
+                    <img src="https://firebasestorage.googleapis.com/v0/b/primecon-7629b.appspot.com/o/icon1.png?alt=media&token=c5c6cdc0-ac07-446a-adda-daaa17cff349" width="116.34px" height="39px" >
                   </div>
 
                   <div class="child-two">
@@ -175,7 +176,7 @@ const addUser = async (req, res) => {
                       Please note that the email you have received is generated
                       automatically by our system.
                     </p>
-                    <img class="center" src="icon2.png" width="79px"  height="26.7px">
+                    <img class="center" src="https://firebasestorage.googleapis.com/v0/b/primecon-7629b.appspot.com/o/icon2.png?alt=media&token=c14cdb8f-18f7-46f7-9174-5964cd372e4e" width="79px"  height="26.7px">
                </div>
               </div>
             </div>
@@ -186,11 +187,81 @@ const addUser = async (req, res) => {
 
       let info2 = await transporter.sendMail({
         from: `${process.env.PRIMECON_EMAIL}`, // sender address
-        to:`${process.env.PRIMECON_EMAIL}`, // list of receivers
+        to: `${process.env.PRIMECON_EMAIL}`, // list of receivers
         subject: "User Visit On PRIMECON", // Subject line
-        html: ``, // html body
+        html: `<!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    font-size: 14px;
+                    line-height: 20px;
+                    /* color: #333333; */
+                }
+                table,
+                th,
+                td {
+                    border: solid 3px #000;
+                    padding: 10px;
+                    outline: none;
+                }
+
+                table {
+                    border-collapse: collapse;
+                    caption-side: bottom;
+                    border-radius: 10%;
+                }
+
+                caption {
+                    font-size: 16px;
+                    font-weight: bold;
+                    padding-top: 5px;
+                }
+            </style>
+        </head>
+
+        <body>
+            <table>
+                <thead>
+                    <tr>
+                        PRIMECON Visited Uer Detail's
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>User Name</td>
+                        <td>${req.body.name}</td>
+                    </tr>
+                    <tr>
+                        <td>User Email</td>
+                        <td>${req.body.email}</td>
+                    </tr>
+                    <tr>
+                        <td>User MobileNo</td>
+                        <td>${req.body.phone}</td>
+                    </tr>
+                    <tr>
+                        <td>User Post Code</td>
+                        <td>${req.body.pinCode}</td>
+                    </tr>
+                    <tr>
+                        <td>User Message</td>
+                        <td>${req.body.message}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </body>
+
+        </html>`, // html body
       });
-      console.log("info2",info2);
+      console.log("info2", info2);
       const obj = {
         res,
         msg: Constant.INFO_MSGS.CREATED_SUCCESSFULLY,
