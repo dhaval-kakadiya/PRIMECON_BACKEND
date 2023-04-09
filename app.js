@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 require("dotenv").config();
 const { PORT, DATABASE_URL } = process.env;
 const routes = require("./routes/index");
+const cors = require('cors');
 
 // =======================
 // configuration =========
@@ -35,6 +36,7 @@ mongoose.connection.on("disconnected", function () {
 });
 
 // Body-parser
+app.use(cors({origin: '*'}));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use("/v1", routes);
