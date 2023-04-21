@@ -210,7 +210,7 @@ const addUser = async (req, res) => {
       });
 
       let info2 = await transporter.sendMail({
-        from: `${process.env.PRIMECON_EMAIL}`, // sender address
+        from: 'info@primecon.ca', // sender address
         to: `${process.env.PRIMECON_EMAIL}`, // list of receivers
         subject: "User Visit On PRIMECON", // Subject line
         html: `<!DOCTYPE html>
