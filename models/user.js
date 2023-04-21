@@ -26,6 +26,12 @@ const userSchema = new Schema(
       type: Number,
       default: null,
     },
+    files: [
+      {
+        type: String,
+        default: null,
+      },
+    ],
   },
   {
     timestamps: true,

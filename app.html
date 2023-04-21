@@ -1,80 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+        <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            line-height: 20px;
-            /* color: #333333; */
-        }
+        <head>
+            <meta charset="UTF-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>E-mail</title>
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+            <link href="https://fonts.googleapis.com/css2?family=Alkatra&family=Poppins&display=swap" rel="stylesheet" />
+            <style>
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
 
-        table,
-        th,
-        td {
-            border: solid 3px #000;
-            padding: 10px;
-            outline: none;
-        }
+                .G_1 {
+                    height: 100vh;
+                    width: 100%;
 
-        table {
-            border-collapse: collapse;
-            caption-side: bottom;
-            border-radius: 10%;
-        }
+                }
 
-        caption {
-            font-size: 16px;
-            font-weight: bold;
-            padding-top: 5px;
-        }
-    </style>
-</head>
+                .G_2 {
+                    height: 660px;
+                    width: 601px;
+                    display: flex;
+                    margin: 0 auto;
+                    font-family: 'Poppins', sans-serif;
+                    /* border: 1px solid black; */
+                }
 
-<body>
+                .child-one {
+                    height: 78px;
+                    width: 100%;
+                    /* background: #212d92; */
+                    display: flex;
+                    align-items: center;
+                    /* padding: 20px; */
+                    /* float: left; */
+                    position: relative;
+                    top: 0px;
+                    left: 0px;
+                    border: 1px solid red;
+                    overflow: hidden;
+                }
 
-    <table>
+                .child-one img {
+                    position: relative;
+                    top: 0px;
+                    left: 0px;
+                    /* left: 20px; */
+                    /* padding-left: 10px; */
+                    /* border: 1px solid red; */
+                    /* margin-left: 10px; */
+                }
 
-        <thead>
-            <tr>
-                PRIMECON Visited Uer Detail's
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>User Name</td>
-                <td>5</td>
-
-            </tr>
-            <tr>
-                <td>User Email</td>
-
-            </tr>
-            <tr>
-                <td>User MobileNo</td>
-                <td>0</td>
-
-            </tr>
-            <tr>
-                <td>User Post Code</td>
-                <td>0</td>
-
-            </tr>
-            <tr>
-                <td>User Message</td>
-                <td>3</td>
-            </tr>
-        </tbody>
-    </table>
+                .child-two {
+                    height: 492px;
+                    width: 100%;
+                    padding: 45px;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 21px;
+                    left: 4.99%;
+                    right: 4.99%;
+                    top: 17.44%;
+                    bottom: 20.99%;
 
 
+                }
 
+                p {
+                    text-align: auto;
 
-</body>
+                }
 
-</html>
+                .child-three {
+                    height: 89px;
+                    width: 100%;
+                    text-align: center;
+                    padding: 20px;
+                    background-color: #D9D9D9;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 18px;
+                }
+
+                .center {
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 5px;
+                }
+                .parent {
+                position: relative;
+                top: 0;
+                left: 0;
+              }
+              .image1 {
+                display: flex;
+                align-items: center;
+                position: relative;
+                top: 0;
+                left: 0;
+                border: 1px solid #000000;
+              }
+              .image2 {
+                position: absolute;
+                top: 20px;
+                left: 30px;
+                border: 1px solid #000000;
+              }
+            </style>
+        </head>
+
+        <body>
+            <div class="G_1">
+                <div class="G_2">
+                    <div>
+
+                        <div class="parent">
+                            <img class="image1" src="https://firebasestorage.googleapis.com/v0/b/primecon-7629b.appspot.com/o/Vector.png?alt=media&token=c6393aa0-4fcf-4cc0-aec0-f799c812c38f" width="100%" height="100%">
+                            <img class="image2" src="https://firebasestorage.googleapis.com/v0/b/primecon-7629b.appspot.com/o/icon1.png?alt=media&token=c5c6cdc0-ac07-446a-adda-daaa17cff349"
+                            width="116.34px" height="39px">
+
+                        </div>
+                        <div class="child-two">
+                            <p>Dear ${req.body.name},</p>
+                            <br>
+
+                            <p>
+                                Thank you for reaching out to <b>Primecon Contrsuction.</b> We appreciate
+                                your interest in our services and the opportunity to discuss your
+                                construction needs.
+                            </p>
+                            <br>
+
+                            <p>
+                                We have received your message and will review it promptly. Our team
+                                is dedicated to providing exceptional customer service and we will
+                                do our best to respond to you at the earliest possible time.
+                            </p>
+                            <br>
+
+                            <p>
+                                If you have any further questions or concerns, please do not
+                                hesitate to contact us. We are always available to assist you with
+                                your construction needs.
+                            </p>
+                            <br>
+
+                            <p>
+                                Thank you once again for considering Primecon Construction for your
+                                project. We look forward to the opportunity to work with you.
+                            </p>
+                            <br>
+
+                            <p>
+                                Best regards,<br />
+                                Primecon
+                            </p>
+                        </div>
+                        <div class="child-three">
+                            <p>
+                                Please note that the email you have received is generated
+                                automatically by our system.
+                            </p>
+                            <img class="center"
+                                src="https://firebasestorage.googleapis.com/v0/b/primecon-7629b.appspot.com/o/icon2.png?alt=media&token=c14cdb8f-18f7-46f7-9174-5964cd372e4e"
+                                width="79px" height="26.7px">
+                        </div>
+                    </div>
+                </div>
+        </body>
+
+        </html>
