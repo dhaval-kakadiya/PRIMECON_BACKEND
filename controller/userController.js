@@ -33,8 +33,9 @@ const addUser = async (req, res) => {
       return Response.error(obj);
     } else {
       let transporter = nodemailer.createTransport({
+        service: "gmail",
         host: "smtp.gmail.com",
-        port: 465,
+        port: 25,
         secure: true, // true for 465, false for other ports
         auth: {
           user: process.env.PRIMECON_EMAIL, // generated ethereal user
@@ -43,7 +44,7 @@ const addUser = async (req, res) => {
       });
 
       let info = await transporter.sendMail({
-        from: `${process.env.PRIMECON_EMAIL}`, // sender address
+        from: 'info@primecon.ca', // sender address
         to: `${email}`, // list of receivers
         subject: "Thank For Contecting PRIMECON Contruction", // Subject line
         html: `<!DOCTYPE html>
@@ -90,7 +91,6 @@ const addUser = async (req, res) => {
                     position: relative;
                     top: 0px;
                     left: 0px;
-                    border: 1px solid red;
                     overflow: hidden;
                 }
 
@@ -143,25 +143,8 @@ const addUser = async (req, res) => {
                     margin-right: auto;
                     margin-top: 5px;
                 }
-                .parent {
-                position: relative;
-                top: 0;
-                left: 0;
-              }
-              .image1 {
-                display: flex;
-                align-items: center;
-                position: relative;
-                top: 0;
-                left: 0;
-                border: 1px solid #000000;
-              }
-              .image2 {
-                position: absolute;
-                top: 20px;
-                left: 30px;
-                border: 1px solid #000000;
-              }
+
+
             </style>
         </head>
 
@@ -171,10 +154,7 @@ const addUser = async (req, res) => {
                     <div>
 
                         <div class="parent">
-                            <img class="image1" src="https://firebasestorage.googleapis.com/v0/b/primecon-7629b.appspot.com/o/Vector.png?alt=media&token=c6393aa0-4fcf-4cc0-aec0-f799c812c38f" width="100%" height="100%">
-                            <img class="image2" src="https://firebasestorage.googleapis.com/v0/b/primecon-7629b.appspot.com/o/icon1.png?alt=media&token=c5c6cdc0-ac07-446a-adda-daaa17cff349"
-                            width="116.34px" height="39px">
-
+                            <img class="image1" src="https://firebasestorage.googleapis.com/v0/b/primecon-7629b.appspot.com/o/Mail%20Banner.png?alt=media&token=b6f3bcb1-c8bf-48f3-8f80-5be62326a68c" width="100%" height="100%">
                         </div>
                         <div class="child-two">
                             <p>Dear ${req.body.name},</p>
