@@ -1,4 +1,3 @@
-const rateLimit = require("express-rate-limit");
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -44,12 +43,6 @@ app.get("/", (req, res) => {
   res.send("Wel-Come PrimCon API's");
 });
 
-const limiter = rateLimit({
-  windowMs: 1000,
-  max: 10,
-});
-// Rate Limiter
-app.use(limiter);
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

@@ -13,16 +13,6 @@ const addUser = async (req, res) => {
   try {
     const userData = req.body;
     const { email } = req.body;
-
-    const { error } = formateValidation.emailVerification({ email });
-    if (error) {
-      const obj = {
-        res,
-        status: Constant.STATUS_CODE.BAD_REQUEST,
-        msg: error.details[0].message,
-      };
-      return Response.error(obj);
-    }
     const saveUser = await userModel.create(userData);
     if (!saveUser) {
       const obj = {
@@ -43,8 +33,8 @@ const addUser = async (req, res) => {
         },
       });
 
-      let info = await transporter.sendMail({
-        from: 'info@primecon.ca', // sender address
+      const mailOptions1 = {
+        from: "info@primecon.ca", // sender address
         to: `${email}`, // list of receivers
         subject: "Thank For Contecting PRIMECON Contruction", // Subject line
         html: `<!DOCTYPE html>
@@ -207,10 +197,9 @@ const addUser = async (req, res) => {
 
         </html>
         `, // html body
-      });
-
-      let info2 = await transporter.sendMail({
-        from: 'info@primecon.ca', // sender address
+      };
+      const mailOptions2 = {
+        from: "info@primecon.ca", // sender address
         to: `${process.env.PRIMECON_EMAIL}`, // list of receivers
         subject: "User Visit On PRIMECON", // Subject line
         html: `<!DOCTYPE html>
@@ -254,15 +243,38 @@ const addUser = async (req, res) => {
 
                     </tr>
                     <tr>
-                    <td>User Upload Document</td>
-                    <td>${req.body.files}</td>
-                </tr>
+                        <td>User Message</td>
+                        <td> <img class="image1" src="${req.body.files[0]}" width="100%" height="100%"></td>
+                    </tr>
+
                 </tbody>
             </table>
         </body>
 
         </html>`, // html body
-      });
+      };
+
+      let info = await transporter.sendMail(
+        mailOptions1,
+        function (err, result) {
+          if (result) {
+            console.log("User Email Sent Successfully!! ......");
+          } else {
+            console.log("err .....", err);
+          }
+        }
+      );
+
+      let info2 = await transporter.sendMail(
+        mailOptions2,
+        function (err, result) {
+          if (result) {
+            console.log("Admin Email Sent Successfully!! ......");
+          } else {
+            console.log("err .....", err);
+          }
+        }
+      );
       // console.log("info2", info2);
       const obj = {
         res,
@@ -277,21 +289,6 @@ const addUser = async (req, res) => {
     return handleException(logger, res, error);
   }
 };
-
-// <% for(var i=0; i<req.body.files.length; i++) {%>
-//   <tr>
-//     <td>
-//       <%= JSON.stringify(data)[i].id%>
-//     </td>
-//   </tr>
-//   <tr>
-//   <td>User Uploaded Files</td>
-//   <td>
-//   <%= link1 = ${req.body.files[i]}%>
-//   </td>
-//   </tr>
-
-//   <% } %>
 
 const uploadFile = async (req, res) => {
   const { logger } = req;
