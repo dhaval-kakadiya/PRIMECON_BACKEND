@@ -208,34 +208,34 @@ const addUser = async (req, res) => {
           <table>
               <thead>
                   <tr>
-                      PRIMECON Visited Uer Detail's
+                     <b> Visited User Details </b>
                   </tr>
               </thead>
               <tbody>
                   <tr>
-                      <td>User Name</td>
+                      <td> Name</td>
                       <td>${req.body.name}</td>
                   </tr>
                   <tr>
-                      <td>User Email</td>
+                      <td> Email</td>
                       <td>${req.body.email}</td>
                   </tr>
                   <tr>
-                      <td>User MobileNo</td>
+                      <td> MobileNo</td>
                       <td>${req.body.phone}</td>
                   </tr>
                   <tr>
-                      <td>User Post Code</td>
+                      <td> Post Code</td>
                       <td>${req.body.pinCode}</td>
                   </tr>
                   <tr>
-                      <td>User Message</td>
+                      <td> Message</td>
                       <td>${req.body.message}</td>
 
                   </tr>
                   <tr>
-                      <td>User Message</td>
-                      <td> <img class="image1" src="${req.body.files[0]}" width="100%" height="100%"></td>
+                      <td> Files</td>
+                      <td> ${req.body.files}</td>
                   </tr>
 
               </tbody>
