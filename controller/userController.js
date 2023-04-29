@@ -2,7 +2,6 @@ const { handleException } = require("../helpers/exception");
 const Response = require("../helpers/response");
 const Constant = require("../helpers/constant");
 const userModel = require("../models/user");
-const formateValidation = require("../helpers/joi-validation");
 const nodemailer = require("nodemailer");
 const { last } = require("underscore");
 const { bucket } = require("../helpers/firebaseApp");
