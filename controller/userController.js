@@ -16,7 +16,7 @@ const addUser = async (req, res) => {
     var transporter = nodemailer.createTransport({
       service: "gmail",
       host: "smtp.gmail.com",
-      port: 25,
+      port: 465,
       secure: true, // true for 465, false for other ports
       auth: {
         user: process.env.PRIMECON_EMAIL, // generated ethereal user
