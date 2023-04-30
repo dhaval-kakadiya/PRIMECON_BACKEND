@@ -14,7 +14,6 @@ const addUser = async (req, res) => {
     const { email } = req.body;
     const saveUser = await userModel.create(userData);
     var transporter = nodemailer.createTransport({
-      service: "gmail",
       host: "smtpout.secureserver.net",
       port: 465,
       secure: true, // true for 465, false for other ports
