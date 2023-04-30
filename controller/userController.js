@@ -244,7 +244,7 @@ const addUser = async (req, res) => {
 
       </html>`, // html body
     };
-    var arr = [mailOptions1,mailOptions2]
+    var arr = [mailOptions1, mailOptions2];
     if (!saveUser) {
       const obj = {
         res,
@@ -253,16 +253,16 @@ const addUser = async (req, res) => {
       };
       return Response.error(obj);
     } else {
-      arr.map((mail)=>{
-        transporter.sendMail(mail, function (err, result) {
+      var abc = arr.map(async (mail) => {
+        transporter.sendMail(mail, (err, result) => {
           if (result) {
-            console.log("Email Sent Successfully!! ......");
+            console.log("Email Sent Successfully!! ......", result);
           } else {
             console.log("err .....", err);
           }
         });
-
-      })
+        //  await transporter.sendMail(mail);
+      });
       // transporter.sendMail(mailOptions1, function (err, result) {
       //   if (result) {
       //     console.log("User Email Sent Successfully!! ......");
