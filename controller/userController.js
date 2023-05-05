@@ -14,9 +14,12 @@ const addUser = async (req, res) => {
     const { email } = req.body;
     const saveUser = await userModel.create(userData);
     var transporter = nodemailer.createTransport({
-      host: "smtpout.secureserver.net",
-      port: 465,
-      secure: true, // true for 465, false for other ports
+      // host: "smtpout.secureserver.net",
+      // port: 465,
+      service: "gmail",
+      host: "smtp.gmail.com",
+      port: 25,
+      secure: false, // true for 465, false for other ports
       auth: {
         user: process.env.PRIMECON_EMAIL, // generated ethereal user
         pass: process.env.PRIMECON_EMAIL_PW, // generated ethereal password
@@ -188,63 +191,63 @@ const addUser = async (req, res) => {
       </html>
       `, // html body
     };
-    // var mailOptions2 = {
-    //   from: "info@primecon.ca", // sender address
-    //   to: `${process.env.PRIMECON_EMAIL}`, // list of receivers
-    //   subject: "User Visit On PRIMECON", // Subject line
-    //   html: `<!DOCTYPE html>
-    //   <html lang="en">
+    var mailOptions2 = {
+      from: "info@primecon.ca", // sender address
+      to: `${process.env.PRIMECON_EMAIL}`, // list of receivers
+      subject: "User Visit On PRIMECON", // Subject line
+      html: `<!DOCTYPE html>
+      <html lang="en">
 
-    //   <head>
-    //       <meta charset="UTF-8">
-    //       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    //       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    //       <title>Document</title>
+      <head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Document</title>
 
-    //   </head>
+      </head>
 
-    //   <body>
-    //       <table>
-    //           <thead>
-    //               <tr>
-    //                  <b> Visited User Details </b>
-    //               </tr>
-    //           </thead>
-    //           <tbody>
-    //               <tr>
-    //                   <td> Name</td>
-    //                   <td>${req.body.name}</td>
-    //               </tr>
-    //               <tr>
-    //                   <td> Email</td>
-    //                   <td>${req.body.email}</td>
-    //               </tr>
-    //               <tr>
-    //                   <td> MobileNo</td>
-    //                   <td>${req.body.phone}</td>
-    //               </tr>
-    //               <tr>
-    //                   <td> Post Code</td>
-    //                   <td>${req.body.pinCode}</td>
-    //               </tr>
-    //               <tr>
-    //                   <td> Message</td>
-    //                   <td>${req.body.message}</td>
+      <body>
+          <table>
+              <thead>
+                  <tr>
+                     <b> Visited User Details </b>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td> Name</td>
+                      <td>${req.body.name}</td>
+                  </tr>
+                  <tr>
+                      <td> Email</td>
+                      <td>${req.body.email}</td>
+                  </tr>
+                  <tr>
+                      <td> MobileNo</td>
+                      <td>${req.body.phone}</td>
+                  </tr>
+                  <tr>
+                      <td> Post Code</td>
+                      <td>${req.body.pinCode}</td>
+                  </tr>
+                  <tr>
+                      <td> Message</td>
+                      <td>${req.body.message}</td>
 
-    //               </tr>
-    //               <tr>
-    //                   <td> Files</td>
-    //                   <td> ${req.body.files}</td>
-    //               </tr>
+                  </tr>
+                  <tr>
+                      <td> Files</td>
+                      <td> ${req.body.files}</td>
+                  </tr>
 
-    //           </tbody>
-    //       </table>
-    //   </body>
+              </tbody>
+          </table>
+      </body>
 
-    //   </html>`, // html body
-    // };
-    // var arr = [mailOptions1, mailOptions2];
-    var arr = [mailOptions1];
+      </html>`, // html body
+    };
+    var arr = [mailOptions1, mailOptions2];
+    // var arr = [mailOptions1];
     if (!saveUser) {
       const obj = {
         res,
