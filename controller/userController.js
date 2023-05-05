@@ -303,7 +303,7 @@ const uploadFile = async (req, res) => {
     var data;
     //firebase logic to upload the image
     var imageData = req.files.image;
-    console.log("imageData---->", imageData.length);
+    // console.log("imageData---->", imageData.length);
     if (imageData.length == undefined) {
       const image = req.files.image.filepath;
       console.log("image", image);
