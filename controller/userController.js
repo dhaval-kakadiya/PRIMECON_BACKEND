@@ -104,7 +104,7 @@ const addUser = async (req, res) => {
                       <p>Dear ${req.body.name},</p>
 
                             <p>
-                                Thank you for reaching out to <b>Primecon Construction .</b> We appreciate
+                                Thank you for reaching out to <b>Primecon Construction.</b> We appreciate
                                 your interest in our services and the opportunity to discuss your
                                 construction needs.
                             </p>
