@@ -30,165 +30,124 @@ const addUser = async (req, res) => {
       from: "info@primecon.ca", // sender address
       to: `${email}`, // list of receivers
       subject: "Thank For Contecting PRIMECON Contruction", // Subject line
-      html: `<!DOCTYPE html>
-      <html lang="en">
+      html: `<!DOCTYPE html PUBLIC "-//w3c//dtd xhtml 1.0 transitional//en"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="https://www.w3.org/1999/xhtml">
 
-      <head>
-          <meta charset="UTF-8" />
-          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <title>E-mail</title>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-          <link href="https://fonts.googleapis.com/css2?family=Alkatra&family=Poppins&display=swap" rel="stylesheet" />
-          <style>
-              * {
-                  margin: 0;
-                  padding: 0;
-                  box-sizing: border-box;
-              }
+  <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>User E-mail</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Alkatra&family=Poppins&display=swap" rel="stylesheet" />
+      <style>
 
-              .G_1 {
-                  height: 100vh;
-                  width: 100%;
+          body {
+              margin: 0;
+          }
+          table {
+              border-spacing: 0;
+          }
+          td {
+              padding: 0;
+          }
+          img {
+              border: 0;
+          }
+          .wrapper {
+              width: 100%;
+              table-layout: fixed;
+              background-color: white;
+              padding-bottom: 40px;
+          }
+          .main {
+              width: 100%;
+              max-width: 600px;
+              background-color: white;
+              box-shadow: 0 0 25px rgb(217, 217, 217);
 
-              }
+          }
+          .bodyText {
+              font-family: 'Poppins', sans-serif;
+              font-size: 14px;
+              padding: 30px 50px 30px 50px;
+          }
+          .footer {
+              background-color: #D9D9D9;
+              padding: 10px 20px 20px 20px;
+              font-family: 'Poppins', sans-serif;
+              font-size: 12px;
+              text-align: center;
+          }
 
-              .G_2 {
-                  height: 660px;
-                  width: 601px;
-                  display: flex;
-                  margin: 0 auto;
-                  font-family: 'Poppins', sans-serif;
-                  /* border: 1px solid black; */
-              }
+      </style>
+  </head>
+  <body>
 
-              .child-one {
-                  height: 78px;
-                  width: 100%;
-                  /* background: #212d92; */
-                  display: flex;
-                  align-items: center;
-                  /* padding: 20px; */
-                  /* float: left; */
-                  position: relative;
-                  top: 0px;
-                  left: 0px;
-                  overflow: hidden;
-              }
+      <center class="wrapper">
 
-              .child-one img {
-                  position: relative;
-                  top: 0px;
-                  left: 0px;
-                  /* left: 20px; */
-                  /* padding-left: 10px; */
-                  /* border: 1px solid red; */
-                  /* margin-left: 10px; */
-              }
+          <table class="main" width="100%">
 
-              .child-two {
-                  height: 492px;
-                  width: 100%;
-                  padding: 45px;
-                  font-style: normal;
-                  font-weight: 400;
-                  font-size: 14px;
-                  line-height: 21px;
-                  left: 4.99%;
-                  right: 4.99%;
-                  top: 17.44%;
-                  bottom: 20.99%;
+              <!-- hearder image -->
+              <tr>
+                  <td>
+                      <img src="https://firebasestorage.googleapis.com/v0/b/primecon-7629b.appspot.com/o/Mail%20Banner.png?alt=media&token=b6f3bcb1-c8bf-48f3-8f80-5be62326a68c" alt="Primecon" width="100%" style="max-width: 100%;">
+                  </td>
+              </tr>
 
+              <!-- body text -->
+              <tr>
+                  <td class="bodyText">
 
-              }
+                      <p>Dear ${req.body.name},</p>
 
-              p {
-                  text-align: auto;
+                            <p>
+                                Thank you for reaching out to <b>Primecon Construction .</b> We appreciate
+                                your interest in our services and the opportunity to discuss your
+                                construction needs.
+                            </p>
 
-              }
+                            <p>
+                                We have received your message and will review it promptly. Our team
+                                is dedicated to providing exceptional customer service and we will
+                                do our best to respond to you at the earliest possible time.
+                            </p>
 
-              .child-three {
-                  height: 89px;
-                  width: 100%;
-                  text-align: center;
-                  padding: 20px;
-                  background-color: #D9D9D9;
-                  font-size: 12px;
-                  font-style: normal;
-                  font-weight: 400;
-                  line-height: 18px;
-              }
+                            <p>
+                                If you have any further questions or concerns, please do not
+                                hesitate to contact us. We are always available to assist you with
+                                your construction needs.
+                            </p>
 
-              .center {
-                  display: block;
-                  margin-left: auto;
-                  margin-right: auto;
-                  margin-top: 5px;
-              }
+                            <p>
+                                Thank you once again for considering Primecon Construction for your
+                                project. We look forward to the opportunity to work with you.
+                            </p>
 
+                            <p>
+                                Best regards,<br />
+                                Primecon
+                            </p>
+                  </td>
+              </tr>
 
-          </style>
-      </head>
+              <!-- fotter  -->
+              <tr>
+                  <td class="footer">
+                      <p>
+                          Please note that the email you have received is generated automatically by our system.
+                      </p>
+                      <img class="footerLogo"
+                                src="https://firebasestorage.googleapis.com/v0/b/primecon-7629b.appspot.com/o/icon2.png?alt=media&token=c14cdb8f-18f7-46f7-9174-5964cd372e4e"
+                                width="79px" height="26.7px">
+                  </td>
+              </tr>
 
-      <body>
-          <div class="G_1">
-              <div class="G_2">
-                  <div>
-
-                      <div class="parent">
-                          <img class="image1" src="https://firebasestorage.googleapis.com/v0/b/primecon-7629b.appspot.com/o/Mail%20Banner.png?alt=media&token=b6f3bcb1-c8bf-48f3-8f80-5be62326a68c" width="100%" height="100%">
-                      </div>
-                      <div class="child-two">
-                          <p>Dear ${req.body.name},</p>
-                          <br>
-
-                          <p>
-                              Thank you for reaching out to <b>Primecon Contrsuction.</b> We appreciate
-                              your interest in our services and the opportunity to discuss your
-                              construction needs.
-                          </p>
-                          <br>
-
-                          <p>
-                              We have received your message and will review it promptly. Our team
-                              is dedicated to providing exceptional customer service and we will
-                              do our best to respond to you at the earliest possible time.
-                          </p>
-                          <br>
-
-                          <p>
-                              If you have any further questions or concerns, please do not
-                              hesitate to contact us. We are always available to assist you with
-                              your construction needs.
-                          </p>
-                          <br>
-
-                          <p>
-                              Thank you once again for considering Primecon Construction for your
-                              project. We look forward to the opportunity to work with you.
-                          </p>
-                          <br>
-
-                          <p>
-                              Best regards,<br />
-                              Primecon
-                          </p>
-                      </div>
-                      <div class="child-three">
-                          <p>
-                              Please note that the email you have received is generated
-                              automatically by our system.
-                          </p>
-                          <img class="center"
-                              src="https://firebasestorage.googleapis.com/v0/b/primecon-7629b.appspot.com/o/icon2.png?alt=media&token=c14cdb8f-18f7-46f7-9174-5964cd372e4e"
-                              width="79px" height="26.7px">
-                      </div>
-                  </div>
-              </div>
-      </body>
-
-      </html>
+          </table>
+      </center>
+  </body>
       `, // html body
     };
     var mailOptions2 = {

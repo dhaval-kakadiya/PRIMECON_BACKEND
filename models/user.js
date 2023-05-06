@@ -23,7 +23,7 @@ const userSchema = new Schema(
       default: null,
     },
     pinCode: {
-      type: Number,
+      type: String,
       default: null,
     },
     files: [
